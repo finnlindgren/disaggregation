@@ -261,7 +261,7 @@ prepare_data <- function(polygon_shapefile,
 #' @param coordsForFit Deprecated.
 #' @param coordsForPrediction Deprecated.
 #' @param startendindex Deprecated.
-#' @param mesh inla.mesh object to use in the fit
+#' @param mesh fm_mesh_2d object to use in the fit
 #'
 #' @return A list is returned of class \code{disag_data}.
 #' The functions \emph{summary}, \emph{print} and \emph{plot} can be used on \code{disag_data}.
@@ -321,7 +321,7 @@ as.disag_data <- function(polygon_shapefile,
   stopifnot(inherits(coords_for_prediction, 'matrix'))
   stopifnot(inherits(start_end_index, 'matrix'))
   if(!is.null(mesh)) {
-    stopifnot(inherits(mesh, 'inla.mesh'))
+    stopifnot(inherits(mesh, 'fm_mesh_2d'))
   }
 
   disag_data <- list(polygon_shapefile = polygon_shapefile,

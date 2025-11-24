@@ -1,4 +1,4 @@
-#' Build mesh for disaggregaton model
+#' Build mesh for disaggregation model
 #'
 #' \emph{build_mesh} function takes a sf object and mesh arguments to build an appropriate mesh for the spatial field.
 #'
@@ -15,12 +15,12 @@
 #'
 #' @param shapes sf covering the region under investigation.
 #' @param mesh_args list of parameters that control the mesh structure. \emph{convex}, \emph{concave} and \emph{resolution},
-#' to control the boundary of the inner mesh, and \emph{max.edge}, \emph{cutoff} and \emph{offset}, to control the  mesh itself,
-#' with the parameters having the same meaning as in the INLA functions \emph{inla.convex.hull} and \emph{inla.mesh.2d}.
+#' to control the boundary of the inner mesh, and \emph{max.edge}, \emph{cutoff} and \emph{offset}, to control the mesh itself,
+#' with the parameters having the same meaning as in the fmesher functions \emph{fm_nonconvex_hull_inla} and \emph{fm_mesh_2d_inla}.
 #' \emph{cut} has been deprecated - use \emph{cutoff} instead.
 #' @param mesh.args Deprecated.
 #'
-#' @return An inla.mesh object
+#' @return An fm_mesh_2d object
 #'
 #' @name build_mesh
 #'

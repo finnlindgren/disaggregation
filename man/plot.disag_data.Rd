@@ -14,11 +14,11 @@
 \item{...}{Further arguments to \emph{plot} function.}
 }
 \value{
-A list of three plots: the polygon plot (ggplot), covariate plot (spplot) and INLA mesh plot (ggplot)
+A list of three plots: the polygon plot (ggplot), covariate plot (spplot) and fmesher/INLA mesh plot (ggplot)
 }
 \description{
 Plotting function for class \emph{disag_data} (the input data for disaggregation).
 }
 \details{
-Produces three plots: polygon response data, covariate rasters and INLA mesh.
+Produces three plots: polygon response data, covariate rasters and fmesher/INLA mesh.
 }

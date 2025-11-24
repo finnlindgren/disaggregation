@@ -336,7 +336,7 @@ make_model_object <- function(data,
   spde <- rSPDE::matern.operators(mesh = data$mesh, alpha = nu + 1, compute_higher_order = TRUE)$fem_mesh_matrices
   spde[[4]] <- NULL
   names(spde) <- c("M0", "M1", "M2")
-  Apix <- fmesher::fm_evaluator(data$mesh, loc = data$coords_for_fit)$proj$A
+  Apix <- fmesher::fm_basis(data$mesh, loc = data$coords_for_fit)
   n_s <- nrow(spde$M0)
 
   cov_matrix <- as.matrix(data$covariate_data[, (names(data$covariate_data) %in% names(data$covariate_rasters))])

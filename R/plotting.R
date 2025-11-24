@@ -2,13 +2,13 @@
 #'
 #' Plotting function for class \emph{disag_data} (the input data for disaggregation).
 #'
-#' Produces three plots: polygon response data, covariate rasters and INLA mesh.
+#' Produces three plots: polygon response data, covariate rasters and fmesher/INLA mesh.
 #'
 #' @param x Object of class \emph{disag_data} to be plotted.
 #' @param which If a subset of plots is required, specify a subset of the numbers 1:3
 #' @param ... Further arguments to \emph{plot} function.
 #'
-#' @return A list of three plots: the polygon plot (ggplot), covariate plot (spplot) and INLA mesh plot (ggplot)
+#' @return A list of three plots: the polygon plot (ggplot), covariate plot (spplot) and fmesher/INLA mesh plot (ggplot)
 #'
 #' @import ggplot2
 #' @method plot disag_data
@@ -32,7 +32,7 @@ plot.disag_data <- function(x, which = c(1,2,3), ...) {
   }
 
   if(3 %in% which & !is.null(x$mesh)) {
-    stopifnot(inherits(x$mesh, 'inla.mesh'))
+    stopifnot(inherits(x$mesh, 'fm_mesh_2d'))
     plots$mesh <- plot_mesh(x$mesh)
     titles <- c(titles, 'INLA mesh for spatial field')
   }
@@ -225,9 +225,9 @@ plot_polygon_data <- function(polygon_shapefile, names) {
   return(invisible(p))
 }
 
-# A ggplot2 method for plotting INLA mesh objects.
+# A ggplot2 method for plotting fmesher/INLA mesh objects.
 #
-# @param object An inla.mesh object
+# @param object An fm_mesh_2d object
 # @param col Colour for data points
 # @param lwd Line width
 # @param linecol The colour for the mesh edges

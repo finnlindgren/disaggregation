@@ -18,7 +18,7 @@ test_that("Check prepare_data function works as expected", {
   expect_is(result$coords_for_fit, 'matrix')
   expect_is(result$coords_for_prediction, 'matrix')
   expect_is(result$start_end_index, 'matrix')
-  expect_is(result$mesh, 'inla.mesh')
+  expect_is(result$mesh, 'fm_mesh_2d')
   expect_equal(sum(is.na(result$polygon_data$N)), length(result$polygon_data$N))
   expect_equal(nrow(result$polygon_data), nrow(result$start_end_index))
   expect_equal(nrow(result$covariate_data), nrow(result$coords_for_fit))

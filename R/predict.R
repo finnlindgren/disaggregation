@@ -279,7 +279,7 @@ setup_objects <- function(model_output, new_data = NULL, predict_iid = FALSE) {
     } else {
       coords <- getCoords(data)
     }
-    Amatrix <- fmesher::fm_evaluator(data$mesh, loc = as.matrix(coords))$proj$A
+    Amatrix <- fmesher::fm_basis(data$mesh, loc = as.matrix(coords))
     field_objects <- list(coords = coords, Amatrix = Amatrix)
   } else {
     field_objects <- NULL

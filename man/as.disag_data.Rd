@@ -39,7 +39,7 @@ as.disag_data(
 
 \item{start_end_index}{matrix containing the start and end index for each polygon}
 
-\item{mesh}{inla.mesh object to use in the fit}
+\item{mesh}{fm_mesh_2d object to use in the fit}
 
 \item{coordsForFit}{Deprecated.}
 
