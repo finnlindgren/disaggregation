@@ -11,7 +11,7 @@ build_mesh(shapes, mesh_args = NULL, mesh.args = NULL)
 
 \item{mesh_args}{list of parameters that control the mesh structure. \emph{convex}, \emph{concave} and \emph{resolution},
 to control the boundary of the inner mesh, and \emph{max.edge}, \emph{cutoff} and \emph{offset}, to control the mesh itself,
-with the parameters having the same meaning as in the fmesher functions \emph{fm_nonconvex_hull_inla} and \emph{fm_mesh_2d_inla}.
+with the parameters having the same meaning as in the fmesher functions \emph{fm_nonconvex_hull} and \emph{fm_mesh_2d_inla}.
 \emph{cut} has been deprecated - use \emph{cutoff} instead.}
 
 \item{mesh.args}{Deprecated.}
@@ -29,7 +29,7 @@ and having a small region outside with a coarser mesh to avoid edge effects.
 
 Six mesh parameters can be specified as arguments: \emph{convex}, \emph{concave} and \emph{resolution},
 to control the boundary of the inner mesh, and \emph{max.edge}, \emph{cutoff} and \emph{offset}, to control the  mesh itself,
-with the names meaning the same as used by the fmesher functions \emph{fm_nonconvex_hull_inla} and \emph{fm_mesh_2d}.
+with the names meaning the same as used by the fmesher functions \emph{fm_nonconvex_hull} and \emph{fm_mesh_2d}.
 
 Defaults are:
 pars <- list(convex = -0.01, concave = -0.5, resolution = 300, max.edge = c(3.0, 8), cutoff = 0.4, offset = c(1, 15)).
